@@ -35,9 +35,10 @@ import (
 var (
 	// complianceGcpListCmd represents the list sub-command inside the gcp command
 	complianceGcpListCmd = &cobra.Command{
-		Use:   "list",
-		Short: "List gcp projects and organizations",
-		Long:  `List all GCP projects and organization IDs.`,
+		Use:     "list",
+		Aliases: []string{"ls"},
+		Short:   "List gcp projects and organizations",
+		Long:    `List all GCP projects and organization IDs.`,
 		RunE: func(_ *cobra.Command, args []string) error {
 			var (
 				response, err = cli.LwApi.Integrations.ListGcpCfg()
@@ -86,7 +87,7 @@ Then navigate to Settings > Integrations > Cloud Accounts.
 	// complianceGcpListProjCmd represents the list-projects sub-command inside the gcp command
 	complianceGcpListProjCmd = &cobra.Command{
 		Use:     "list-projects <organization_id>",
-		Aliases: []string{"list-proj"},
+		Aliases: []string{"list-proj", "ls-proj"},
 		Short:   "List projects from an organization",
 		Long: `List all GCP projects from the provided organization ID.
 
@@ -132,7 +133,7 @@ Then, select one GUID from an integration and visualize its details using the co
 	// complianceGcpGetReportCmd represents the get-report sub-command inside the gcp command
 	complianceGcpGetReportCmd = &cobra.Command{
 		Use:     "get-report <organization_id> <project_id>",
-		Aliases: []string{"get"},
+		Aliases: []string{"get", "show"},
 		PreRunE: func(_ *cobra.Command, _ []string) error {
 			if compCmdState.Csv {
 				cli.EnableCSVOutput()

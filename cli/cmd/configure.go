@@ -68,9 +68,10 @@ the Lacework CLI will create it for you.`,
 	}
 
 	configureListCmd = &cobra.Command{
-		Use:   "list",
-		Short: "List all configured profiles at ~/.lacework.toml",
-		Args:  cobra.NoArgs,
+		Use:     "list",
+		Aliases: []string{"ls"},
+		Short:   "List all configured profiles at ~/.lacework.toml",
+		Args:    cobra.NoArgs,
 		Long: `List all profiles configured into the config file ~/.lacework.toml
 
 To switch to a different profile permanently in your current terminal,

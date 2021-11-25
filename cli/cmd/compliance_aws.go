@@ -34,7 +34,7 @@ var (
 	// complianceAwsListAccountsCmd represents the list-accounts inside the aws command
 	complianceAwsListAccountsCmd = &cobra.Command{
 		Use:     "list-accounts",
-		Aliases: []string{"list"},
+		Aliases: []string{"list", "ls"},
 		Short:   "List all AWS accounts configured",
 		Long:    `List all AWS accounts configured in your account.`,
 		Args:    cobra.NoArgs,
@@ -85,7 +85,7 @@ Then navigate to Settings > Integrations > Cloud Accounts.
 	// complianceAwsGetReportCmd represents the get-report sub-command inside the aws command
 	complianceAwsGetReportCmd = &cobra.Command{
 		Use:     "get-report <account_id>",
-		Aliases: []string{"get"},
+		Aliases: []string{"get", "show"},
 		PreRunE: func(_ *cobra.Command, _ []string) error {
 			if compCmdState.Csv {
 				cli.EnableCSVOutput()

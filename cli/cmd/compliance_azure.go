@@ -34,7 +34,7 @@ var (
 	// complianceAzureListSubsCmd represents the list-subscriptions sub-command inside the azure command
 	complianceAzureListSubsCmd = &cobra.Command{
 		Use:     "list-subscriptions <tenant_id>",
-		Aliases: []string{"list-subs"},
+		Aliases: []string{"list-subs", "ls-subs"},
 		Short:   "List subscriptions from tenant",
 		Long: `List all Azure subscriptions from the provided Tenant ID.
 
@@ -78,7 +78,7 @@ Use the following command to list all Azure Tenants configured in your account:
 	// complianceAzureListTenantsCmd represents the list-tenants sub-command inside the azure command
 	complianceAzureListTenantsCmd = &cobra.Command{
 		Use:     "list-tenants",
-		Aliases: []string{"list"},
+		Aliases: []string{"list", "ls"},
 		Short:   "List all Azure Tenants configured",
 		Long:    `List all Azure Tenants configured in your account.`,
 		Args:    cobra.NoArgs,

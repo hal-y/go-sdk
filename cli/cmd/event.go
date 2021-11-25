@@ -60,8 +60,9 @@ var (
 
 	// eventListCmd represents the list sub-command inside the event command
 	eventListCmd = &cobra.Command{
-		Use:   "list",
-		Short: "List all events (default last 7 days)",
+		Use:     "list",
+		Aliases: []string{"ls"},
+		Short:   "List all events (default last 7 days)",
 		Long: `List all events for the last 7 days by default, or pass --start and --end to
 specify a custom time period. You can also pass --serverity to filter by a
 severity threshold.

@@ -46,9 +46,10 @@ var (
 
 	// integrationListCmd represents the list sub-command inside the integration command
 	integrationListCmd = &cobra.Command{
-		Use:   "list",
-		Short: "List all available external integrations",
-		Args:  cobra.NoArgs,
+		Use:     "list",
+		Aliases: []string{"ls"},
+		Short:   "List all available external integrations",
+		Args:    cobra.NoArgs,
 		RunE: func(_ *cobra.Command, _ []string) error {
 			var (
 				integrations api.RawIntegrationsResponse

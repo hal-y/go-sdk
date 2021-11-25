@@ -73,10 +73,11 @@ complete, the old token can safely be disabled without interrupting Lacework ser
 	}
 
 	agentTokenListCmd = &cobra.Command{
-		Use:   "list",
-		Short: "List all agent access tokens",
-		Args:  cobra.NoArgs,
-		RunE:  listAgentTokens,
+		Use:     "list",
+		Aliases: []string{"ls"},
+		Short:   "List all agent access tokens",
+		Args:    cobra.NoArgs,
+		RunE:    listAgentTokens,
 	}
 
 	agentTokenCreateCmd = &cobra.Command{
@@ -115,11 +116,12 @@ To enable a token:
 
 	// TODO hidden for now
 	agentListCmd = &cobra.Command{
-		Use:    "list",
-		Short:  "List all hosts with a running agent",
-		Long:   `List all hosts that have a running agent in your environment`,
-		Hidden: true,
-		RunE:   listAgents,
+		Use:     "list",
+		Aliases: []string{"ls"},
+		Short:   "List all hosts with a running agent",
+		Long:    `List all hosts that have a running agent in your environment`,
+		Hidden:  true,
+		RunE:    listAgents,
 	}
 
 	// TODO hidden for now
